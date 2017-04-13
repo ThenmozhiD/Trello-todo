@@ -1,0 +1,35 @@
+<div class="panel panel-primary ">
+    <div class="task-list panel-heading" id="{{x.id}}">
+      <h1  class="panel-title">{{x.title}}</h1>      
+</div>
+
+  <div class="wrapper" >
+    <div class="container" [dragula]='"evented-bag"'>
+    <div *ngFor="let child of x.child" class="well well-sm" id = "{{child?.id}}" >
+      <div id="{{child?.id}}childTitle" class= "childTitle" >
+        <span> {{child?.title}} </span>
+        <span class= "glyphicon glyphicon-pencil" (click) = "editList($event)"></span> 
+        <span class= "glyphicon glyphicon-remove" (click) = "deleteList($event)"></span> 
+        
+      </div>
+      
+      <div id= "{{child?.id}}editTitle" class="editTitle">
+        <input  #editTitle type="text" placeholder="{{child?.title}}"  /> 
+        <span class= "glyphicon glyphicon-ok" (click)= "saveEdit(editTitle.value, $event)"></span>         
+        
+      </div>
+    </div>
+    </div>
+  </div>
+
+    <div class="newCard">
+      <div [ngClass]="{'add-group': addClass}">
+        <a href="#" (click)="displayIn()">Add a Card </a>
+      </div>
+      <div [ngClass]="{'input-group': toggleClass}">
+        <input #newTitle type="text" placeholder="Card Title.."  value="" />        
+        <button class="btn btn-success" (click)= "addList(newTitle.value, $event)" id="{{x.id}}">Save</button>
+        <button class="btn btn-danger" (click)= "displayIn()">Cancel</button>
+      </div>     
+    </div>
+</div>

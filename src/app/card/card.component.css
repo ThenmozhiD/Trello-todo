@@ -1,0 +1,51 @@
+.panel{   
+    display: inline-block;
+    padding: 2px;
+    
+}
+
+.newCard {
+    margin: 5px;
+}
+
+.newCard a{
+    color: #999;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.newCard .input-group, .editTitle{
+    display: none;
+}
+
+.newCard .add-group{
+    display: none;
+}
+
+.glyphicon.glyphicon-remove, 
+.glyphicon.glyphicon-pencil{
+    float: right;
+    padding: 5px;
+}
+
+.well-sm{
+    margin: 5px;
+}
+
+.editTitle{
+    display: none;
+}
+
+
+
+.container{
+    width: 250px;
+    min-height: 50px;
+   
+}
+.container div{
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
